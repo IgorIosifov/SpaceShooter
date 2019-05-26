@@ -9,8 +9,10 @@ public class DesktopLauncher {
     public static void main(String[] arg) {
         System.setProperty("user.name", "Public");
         LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
-        config.width = 350;
-        config.height = 700;
+        float aspect = 9f / 16f;
+        config.width = 400;
+        config.height = (int) (config.width/aspect);
+        config.resizable = false;
         new LwjglApplication(new SpaceShooter(), config);
     }
 }
