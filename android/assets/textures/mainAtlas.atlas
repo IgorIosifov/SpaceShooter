@@ -1,0 +1,26 @@
+
+mainAtlas.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+PlayerShipNotOk
+  rotate: false
+  xy: 1, 259
+  size: 508, 511
+  orig: 508, 511
+  offset: 0, 0
+  index: -1
+PlayerShipOk
+  rotate: false
+  xy: 511, 259
+  size: 508, 511
+  orig: 508, 511
+  offset: 0, 0
+  index: -1
+star
+  rotate: false
+  xy: 1, 1
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
