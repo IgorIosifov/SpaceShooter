@@ -3,18 +3,11 @@ mainAtlas.png
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-PlayerShipNotOk
+PlayerShip
   rotate: false
   xy: 1, 259
-  size: 508, 511
-  orig: 508, 511
-  offset: 0, 0
-  index: -1
-PlayerShipOk
-  rotate: false
-  xy: 511, 259
-  size: 508, 511
-  orig: 508, 511
+  size: 1023, 511
+  orig: 1023, 511
   offset: 0, 0
   index: -1
 star
@@ -22,5 +15,12 @@ star
   xy: 1, 1
   size: 256, 256
   orig: 256, 256
+  offset: 0, 0
+  index: -1
+bulletPlayerShip
+  rotate: false
+  xy: 1026, 706
+  size: 64, 64
+  orig: 64, 64
   offset: 0, 0
   index: -1
