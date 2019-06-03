@@ -20,7 +20,7 @@ public abstract class SpritesPool<T extends Sprite> {
             Object = freeObjects.remove(freeObjects.size() - 1);
         }
         activeObjects.add(Object);
-        System.out.println("active/free:" + activeObjects.size() +
+        System.out.println(getClass().getName()+"active/free:" + activeObjects.size() +
                 "/"+freeObjects.size());
         return Object;
     }
@@ -41,7 +41,7 @@ public abstract class SpritesPool<T extends Sprite> {
         }
     }
 
-    public void freeAllDestrotedActiveSprites() {
+    public void freeAllDestroyedActiveSprites() {
         for (int i = 0; i < activeObjects.size(); i++) {
             T sprite = activeObjects.get(i);
             if (sprite.isDestroyed()) {
@@ -65,7 +65,8 @@ public abstract class SpritesPool<T extends Sprite> {
         if (activeObjects.remove(object)) {
             freeObjects.add(object);
         }
-        System.out.println("active/free:" + activeObjects.size() +
+        System.out.println(getClass().getName() + "active/free:" +
+                activeObjects.size() +
                 "/"+freeObjects.size());
     }
 }

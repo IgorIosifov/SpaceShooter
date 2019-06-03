@@ -10,7 +10,7 @@ public class DesktopLauncher {
         System.setProperty("user.name", "Public");
         LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
         float aspect = 9f / 16f;
-        config.width = 200;
+        config.width = 300;
         config.height = (int) (config.width/aspect);
         config.resizable = false;
         new LwjglApplication(new SpaceShooter(), config);
