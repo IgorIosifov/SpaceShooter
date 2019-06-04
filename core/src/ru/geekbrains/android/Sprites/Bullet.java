@@ -34,7 +34,6 @@ public class Bullet extends Sprite {
         setHeightProportion(height);
         this.worldBounds = worldBounds;
         this.damage = damage;
-        sound();
     }
 
     @Override
@@ -53,8 +52,4 @@ public class Bullet extends Sprite {
         return owner;
     }
 
-    public void sound () {
-        Sound sound = Gdx.audio.newSound(Gdx.files.internal("sounds/laser.wav"));
-        sound.play(0.05f);
-    }
 }
