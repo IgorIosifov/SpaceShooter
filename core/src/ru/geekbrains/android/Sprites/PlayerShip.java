@@ -32,7 +32,7 @@ public class PlayerShip extends Ship {
         this.reloadInterval = 0.3f;
         this.damage = 1;
         this.bulletSound = bulletSound;
-        this.hp = 10;
+        this.hp = 100;
 
 
     }
@@ -40,6 +40,7 @@ public class PlayerShip extends Ship {
     public void newGame() {
         this.hp = 10;
         this.pos.x = worldBounds.pos.x;
+        flushDestroy();
     }
 
     @Override
@@ -152,6 +153,16 @@ public class PlayerShip extends Ship {
                         || bullet.getBottom() > pos.y
                         || bullet.getTop() < getBottom()
         );
+    }
+
+    @Override
+    public void destroy() {
+        super.destroy();
+        pressedLeft = false;
+        pressedRight = false;
+        leftPointer = INVALID_POINTER;
+        rightPointer = INVALID_POINTER;
+        stop();
     }
 
     private void moveRight() {

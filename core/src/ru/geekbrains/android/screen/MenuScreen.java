@@ -2,7 +2,6 @@ package ru.geekbrains.android.screen;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 
@@ -13,6 +12,7 @@ import com.badlogic.gdx.math.Vector2;
 import ru.geekbrains.android.Sprites.Background;
 import ru.geekbrains.android.Sprites.ButtonExit;
 import ru.geekbrains.android.Sprites.ButtonPlay;
+import ru.geekbrains.android.Sprites.Logo;
 import ru.geekbrains.android.Sprites.Star;
 import ru.geekbrains.android.base.BaseScreen;
 import ru.geekbrains.android.math.Rect;
@@ -22,7 +22,9 @@ public class MenuScreen extends BaseScreen {
     private static  final int STAR_COUNT = 256;
     private Game game;
     private Texture bg;
+    private Texture lg;
     private Background background;
+    private Logo logo;
     private TextureAtlas atlas;
     private Star[] starArray;
     private ButtonExit buttonExit;
@@ -36,7 +38,9 @@ public class MenuScreen extends BaseScreen {
     public void show() {
         super.show();
         bg = new Texture("textures/background.jpg");
+        lg = new Texture("textures/logo.png");
         background = new Background(new TextureRegion(bg));
+        logo = new Logo(new TextureRegion(lg));
         atlas = new TextureAtlas("textures/menuAtlas.atlas");
         starArray = new Star [STAR_COUNT];
         for (int i = 0; i < STAR_COUNT; i++) {
@@ -58,6 +62,7 @@ public class MenuScreen extends BaseScreen {
     for (Star star : starArray){
     star.update(delta);
     }
+    logo.update(delta,worldBounds);
     }
 
     private void draw() {
@@ -68,6 +73,7 @@ public class MenuScreen extends BaseScreen {
         for (Star star : starArray){
             star.draw(batch);
         }
+        logo.draw(batch);
         buttonExit.draw(batch);
         buttonPlay.draw(batch);
         batch.end();
@@ -77,6 +83,7 @@ public class MenuScreen extends BaseScreen {
     public void dispose() {
 
         bg.dispose();
+        lg.dispose();
         atlas.dispose();
         super.dispose();
     }
